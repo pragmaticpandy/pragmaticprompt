@@ -37,6 +37,7 @@ __pp_current_time() {
 __pp_format_duration() {
     local mins=$(echo $(($1 / 60))|cut -d. -f1)
     local secs=$(printf "%.3f" $(($1 - 60 * mins)))
+    if [[ $mins -gt 0 || $secs -gt 30 ]]; then tput bel; fi
     echo ""$( date +"%b %d %H:%M:%S %Z" )" — ${mins}m ${secs}s"
 }
 
