@@ -24,7 +24,7 @@ __pp_get_git_branch(){
 }
 
 __pp_set_prompts_precmd(){
-PROMPT="%{$fg[$PRAGMATIC_PROMPT_PROMPT_FOREGROUND]%}%D{%b %d %H:%M:%S %Z} "$(__pp_get_clean_wd)"
+PROMPT="%{$fg[$PRAGMATIC_PROMPT_PROMPT_FOREGROUND]%}%D{%b %d %H:%M:%S %Z} "$(hostname -s)" "$(__pp_get_clean_wd)"
 → %{$fg[$PRAGMATIC_PROMPT_COMMAND_FOREGROUND]%}"
 
 RPROMPT="%{$fg[$PRAGMATIC_PROMPT_PROMPT_FOREGROUND]%}"$(__pp_get_git_branch)"%{$fg[$PRAGMATIC_PROMPT_COMMAND_FOREGROUND]%}"
